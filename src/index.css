@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: "Inter", system-ui, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* Background patterns */
+.bg-dots-pattern {
+	background-image: radial-gradient(circle, white 1px, transparent 1px);
+	background-size: 20px 20px;
+}
+
+/* Grid background patterns for hero */
+.bg-grid-small-black\/\[0\.2\] {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.2)'%3e%3cpath d='m0 .5h32m-32 8h32m-32 8h32m-32 8h32'/%3e%3cpath d='m.5 0v32m8-32v32m8-32v32m8-32v32'/%3e%3c/svg%3e");
+}
+
+.bg-grid-small-white\/\[0\.2\] {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.2)'%3e%3cpath d='m0 .5h32m-32 8h32m-32 8h32m-32 8h32'/%3e%3cpath d='m.5 0v32m8-32v32m8-32v32m8-32v32'/%3e%3c/svg%3e");
+}
+
+/* Grid pattern for dark hero */
+.bg-grid-white\/\[0\.02\] {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.02)'%3e%3cpath d='m0 .5h32m-32 8h32m-32 8h32m-32 8h32'/%3e%3cpath d='m.5 0v32m8-32v32m8-32v32m8-32v32'/%3e%3c/svg%3e");
+}
+
+/* Animation utilities */
+.animate-fade-in {
+	animation: fade-in 3s ease-in-out;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.duration-2000 {
+	animation-duration: 2s;
+}
+
+/* Lamp effect conic gradients */
+.bg-gradient-conic {
+	background: conic-gradient(
+		var(--conic-position, from 0deg),
+		var(--tw-gradient-stops)
+	);
+}
+
+/* Support for conic gradient positions */
+@supports (background: conic-gradient(from 0deg, red, blue)) {
+	.bg-gradient-conic {
+		background: conic-gradient(
+			var(--conic-position, from 0deg),
+			var(--tw-gradient-stops)
+		);
+	}
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #94a3b8;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+	background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+	background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+	background: #6b7280;
+}
+
+/* Glowing Effect CSS */
+.glow {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	user-select: none;
+}
+
+.glow::after {
+	content: "";
+	position: absolute;
+	inset: calc(-1 * var(--glowingeffect-border-width, 1px));
+	border: var(--glowingeffect-border-width, 1px) solid transparent;
+	border-radius: inherit;
+	background: var(--gradient);
+	background-attachment: fixed;
+	opacity: var(--active, 0);
+	transition: opacity 300ms ease;
+	mask-clip: padding-box, border-box;
+	mask-composite: intersect;
+	mask-image: linear-gradient(transparent, transparent),
+		conic-gradient(
+			from calc((var(--start, 0) - var(--spread, 20)) * 1deg),
+			transparent 0deg,
+			white,
+			transparent calc(var(--spread, 20) * 2deg)
+		);
+}
+
+/* Enhanced glowing effect with more vibrant colors and animations */
+.enhanced-glow::after {
+	/* Add a subtle animation to make the glow pulse */
+	animation: glow-pulse 3s ease-in-out infinite alternate;
+	/* Enhanced box shadow for additional glow */
+	box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.2),
+		0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+/* AI/Brain project glow - Pink/Purple theme */
+.enhanced-glow.ai-glow::after {
+	box-shadow: 0 0 25px rgba(236, 72, 153, 0.4), 0 0 50px rgba(236, 72, 153, 0.3),
+		0 0 75px rgba(236, 72, 153, 0.2);
+	animation: ai-glow-pulse 2.5s ease-in-out infinite alternate;
+}
+
+/* Security/Shield project glow - Red theme */
+.enhanced-glow.security-glow::after {
+	box-shadow: 0 0 20px rgba(239, 68, 68, 0.4), 0 0 40px rgba(239, 68, 68, 0.3),
+		0 0 60px rgba(239, 68, 68, 0.2);
+	animation: security-glow-pulse 2s ease-in-out infinite alternate;
+}
+
+/* Cloud project glow - Green theme */
+.enhanced-glow.cloud-glow::after {
+	box-shadow: 0 0 30px rgba(16, 185, 129, 0.4), 0 0 60px rgba(16, 185, 129, 0.3),
+		0 0 90px rgba(16, 185, 129, 0.2);
+	animation: cloud-glow-pulse 3.5s ease-in-out infinite alternate;
+}
+
+/* Server/Backend project glow - Blue theme */
+.enhanced-glow.server-glow::after {
+	box-shadow: 0 0 22px rgba(59, 130, 246, 0.4), 0 0 44px rgba(59, 130, 246, 0.3),
+		0 0 66px rgba(59, 130, 246, 0.2);
+	animation: server-glow-pulse 2.8s ease-in-out infinite alternate;
+}
+
+/* Community glow for club management system */
+.community-glow {
+	animation: community-glow-pulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes community-glow-pulse {
+	0% {
+		opacity: var(--active, 0);
+		filter: brightness(1) saturate(1);
+	}
+	100% {
+		opacity: calc(var(--active, 0) * 1.15);
+		filter: brightness(1.08) saturate(1.15);
+	}
+}
+
+/* Academic glow for timetable system */
+.academic-glow {
+	animation: academic-glow-pulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes academic-glow-pulse {
+	0% {
+		opacity: var(--active, 0);
+		filter: brightness(1) saturate(1);
+	}
+	100% {
+		opacity: calc(var(--active, 0) * 1.2);
+		filter: brightness(1.1) saturate(1.2);
+	}
+}
+
+/* Glow pulse animations */
+@keyframes glow-pulse {
+	0% {
+		opacity: var(--active, 0);
+		filter: brightness(1) saturate(1);
+	}
+	100% {
+		opacity: calc(var(--active, 0) * 1.2);
+		filter: brightness(1.1) saturate(1.2);
+	}
+}
+
+@keyframes ai-glow-pulse {
+	0% {
+		opacity: var(--active, 0);
+		filter: brightness(1) saturate(1) hue-rotate(0deg);
+	}
+	100% {
+		opacity: calc(var(--active, 0) * 1.3);
+		filter: brightness(1.2) saturate(1.3) hue-rotate(5deg);
+	}
+}
+
+@keyframes security-glow-pulse {
+	0% {
+		opacity: var(--active, 0);
+		filter: brightness(1) saturate(1);
+	}
+	100% {
+		opacity: calc(var(--active, 0) * 1.4);
+		filter: brightness(1.3) saturate(1.4);
+	}
+}
+
+@keyframes cloud-glow-pulse {
+	0% {
+		opacity: var(--active, 0);
+		filter: brightness(1) saturate(1);
+	}
+	100% {
+		opacity: calc(var(--active, 0) * 1.1);
+		filter: brightness(1.05) saturate(1.1);
+	}
+}
+
+@keyframes server-glow-pulse {
+	0% {
+		opacity: var(--active, 0);
+		filter: brightness(1) saturate(1);
+	}
+	100% {
+		opacity: calc(var(--active, 0) * 1.25);
+		filter: brightness(1.15) saturate(1.25);
+	}
+}
+
+/* Project card inner glow effects */
+.enhanced-glow-card {
+	position: relative;
+}
+
+.enhanced-glow-card::before {
+	content: "";
+	position: absolute;
+	inset: 1px;
+	border-radius: inherit;
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.1) 0%,
+		rgba(255, 255, 255, 0.05) 50%,
+		rgba(255, 255, 255, 0.02) 100%
+	);
+	opacity: 0;
+	transition: opacity 300ms ease;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.enhanced-glow-card:hover::before {
+	opacity: 1;
+}
+
+/* Dark mode inner glow */
+.dark .enhanced-glow-card::before {
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.05) 0%,
+		rgba(255, 255, 255, 0.02) 50%,
+		rgba(255, 255, 255, 0.01) 100%
+	);
+}
+
+/* Code glow for CodeNest developer platform */
+.code-glow {
+	animation: code-glow-pulse 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes code-glow-pulse {
+	0% {
+		opacity: var(--active, 0);
+		filter: brightness(1) saturate(1);
+	}
+	100% {
+		opacity: calc(var(--active, 0) * 1.3);
+		filter: brightness(1.2) saturate(1.3);
+	}
+}
+
+/* Chatbot glow for RDU Chat Bot assistant */
+.chatbot-glow {
+	animation: chatbot-glow-pulse 2.3s ease-in-out infinite alternate;
+}
+
+@keyframes chatbot-glow-pulse {
+	0% {
+		opacity: var(--active, 0);
+		filter: brightness(1) saturate(1) hue-rotate(0deg);
+	}
+	100% {
+		opacity: calc(var(--active, 0) * 1.35);
+		filter: brightness(1.25) saturate(1.35) hue-rotate(3deg);
+	}
+}
+
+/* Contact form animations */
+.animate-in {
+	animation: fade-in 0.3s ease-out;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

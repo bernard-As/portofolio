@@ -23,6 +23,7 @@ export const LampFooter = () => {
 
 	return (
 		<LampContainer>
+      <div className="h-5"></div>
 			<motion.div
 				initial={{ opacity: 0.5, y: 100 }}
 				whileInView={{ opacity: 1, y: 0 }}

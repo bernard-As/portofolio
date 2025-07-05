@@ -18,7 +18,7 @@ function App() {
 			<div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
 				<ScrollProgressBar />
 				<Header />
-				<main className="pt-16 md:pt-20 px-4 md:px-8 lg:px-12">
+				<main className="pt-16 md:pt-40 px-4 md:px-8 lg:px-12">
 					<HeroHighlight />
 					<About />
 					<Skills />

@@ -18,12 +18,16 @@ function App() {
 			<div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
 				<ScrollProgressBar />
 				<Header />
-				<main className="pt-16 md:pt-40 px-4 md:px-8 lg:px-12">
-					<HeroHighlight />
-					<About />
-					<Skills />
-					<Projects />
-					<Contact />
+				<main className="pt-16 md:pt-20">
+					<div className="px-4 sm:px-6 md:px-8 lg:px-12">
+						<HeroHighlight />
+					</div>
+					<div className="px-4 sm:px-6 md:px-8 lg:px-12 space-y-8 md:space-y-16">
+						<About />
+						<Skills />
+						<Projects />
+						<Contact />
+					</div>
 				</main>
 				<LampFooter />
 				<ScrollToTop />

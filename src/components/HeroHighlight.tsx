@@ -16,11 +16,11 @@ import { cn } from "../lib/utils";
 
 export const HeroHighlight = () => {
 	return (
-		<div className="h-screen w-full dark:bg-black bg-white dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] relative flex items-center justify-center">
+		<div className="min-h-screen w-full dark:bg-black bg-white dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] relative flex items-center justify-center py-12 md:py-0">
 			{/* Radial gradient for the container to give a faded look */}
 			<div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-			<div className="text-center z-20 max-w-6xl mx-auto px-6">
+			<div className="text-center z-20 max-w-6xl mx-auto px-4 md:px-6">
 				{/* Animated greeting
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export const HeroHighlight = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto mb-8">
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-tight md:leading-relaxed lg:leading-snug text-center mx-auto mb-6 md:mb-8">
           Software Engineer{" "}
           <HighlightText className="text-black dark:text-white">
             Specializing in Backend
@@ -49,7 +49,7 @@ export const HeroHighlight = () => {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.2 }}
-					className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+					className="text-base md:text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed px-4">
 					Fullstack developer specializing in robust backend systems, AI
 					integration, cloud infrastructure, and security-first solutions.
 				</motion.p>
@@ -59,7 +59,7 @@ export const HeroHighlight = () => {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.3 }}
-					className="flex flex-wrap justify-center gap-4 mb-12">
+					className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12 px-4">
 					{[
 						{ icon: Server, label: "Backend APIs", color: "blue" },
 						{ icon: Brain, label: "AI Integration", color: "purple" },
@@ -77,9 +77,9 @@ export const HeroHighlight = () => {
 								transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
 								whileHover={{ scale: 1.05, y: -2 }}
 								className="group relative">
-								<div className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300">
-									<IconComponent className="w-4 h-4 text-primary-600 dark:text-primary-400 group-hover:scale-110 transition-transform duration-300" />
-									<span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+								<div className="flex items-center gap-2 px-3 md:px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300">
+									<IconComponent className="w-3 md:w-4 h-3 md:h-4 text-primary-600 dark:text-primary-400 group-hover:scale-110 transition-transform duration-300" />
+									<span className="text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300">
 										{tech.label}
 									</span>
 								</div>
@@ -95,7 +95,7 @@ export const HeroHighlight = () => {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.5 }}
-					className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+					className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-12 px-4">
 					<motion.button
 						whileHover={{ scale: 1.02 }}
 						whileTap={{ scale: 0.98 }}
@@ -103,7 +103,7 @@ export const HeroHighlight = () => {
 							const element = document.getElementById("projects");
 							if (element) element.scrollIntoView({ behavior: "smooth" });
 						}}
-						className="group inline-flex items-center gap-2 px-8 py-4 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black rounded-lg font-medium transition-all duration-300 hover:bg-neutral-800 dark:hover:bg-neutral-200">
+						className="group inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black rounded-lg font-medium transition-all duration-300 hover:bg-neutral-800 dark:hover:bg-neutral-200 text-sm md:text-base">
 						View My Work
 						<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
 					</motion.button>
@@ -115,7 +115,7 @@ export const HeroHighlight = () => {
 							const element = document.getElementById("contact");
 							if (element) element.scrollIntoView({ behavior: "smooth" });
 						}}
-						className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg font-medium transition-all duration-300 hover:bg-neutral-50 dark:hover:bg-neutral-800">
+						className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-transparent border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg font-medium transition-all duration-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 text-sm md:text-base">
 						Get In Touch
 					</motion.button>
 				</motion.div>

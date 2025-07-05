@@ -83,7 +83,7 @@ const About: React.FC = () => {
 						{/* Image/Visual with Direction-Aware Hover */}
 						<div className="relative">
 							<DirectionAwareHover
-								imageUrl={`${import.meta.env.VITE_PORT}/src/assets/me.jpg`}
+								imageUrl="/me.jpg"
 								className="rounded-xl h-[500px] w-full"
 								childrenClassName="bg-black/60 backdrop-blur-sm">
 								<div className="text-white">

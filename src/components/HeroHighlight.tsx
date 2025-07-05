@@ -33,16 +33,16 @@ export const HeroHighlight = () => {
 				</motion.div> */}
 
 				{/* Main heading with highlight effect */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-tight md:leading-relaxed lg:leading-snug text-center mx-auto mb-6 md:mb-8">
-          Software Engineer{" "}
-          <HighlightText className="text-black dark:text-white">
-            Specializing in Backend
-          </HighlightText>
-        </motion.h1>
+				<motion.h1
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5, delay: 0.1 }}
+					className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-tight md:leading-relaxed lg:leading-snug text-center mx-auto mb-6 md:mb-8">
+					Software Engineer{" "}
+					<HighlightText className="text-black dark:text-white">
+						Specializing in Backend
+					</HighlightText>
+				</motion.h1>
 
 				{/* Subtitle */}
 				<motion.p
@@ -127,9 +127,21 @@ export const HeroHighlight = () => {
 					transition={{ duration: 0.5, delay: 0.6 }}
 					className="flex justify-center gap-6">
 					{[
-						{ icon: Github, href: "https://github.com/bernard-As", label: "GitHub" },
-						{ icon: Linkedin, href: "https://www.linkedin.com/in/mahougnon-bernard-de-montfort-a-3680a12b2/", label: "LinkedIn" },
-						{ icon: Mail, href: "mailto:montfortassogba2@gmail.com", label: "Email" },
+						{
+							icon: Github,
+							href: "https://github.com/bernard-As",
+							label: "GitHub",
+						},
+						{
+							icon: Linkedin,
+							href: "https://www.linkedin.com/in/mahougnon-bernard-de-montfort-a-3680a12b2/",
+							label: "LinkedIn",
+						},
+						{
+							icon: Mail,
+							href: "mailto:montfortassogba2@gmail.com",
+							label: "Email",
+						},
 					].map((social, index) => {
 						const IconComponent = social.icon;
 						return (
@@ -138,7 +150,7 @@ export const HeroHighlight = () => {
 								href={social.href}
 								whileHover={{ scale: 1.1, y: -2 }}
 								whileTap={{ scale: 0.95 }}
-                target="_blank"
+								target="_blank"
 								className="p-3 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-all duration-300 hover:shadow-lg"
 								aria-label={social.label}>
 								<IconComponent className="w-5 h-5" />

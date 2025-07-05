@@ -23,7 +23,7 @@ export const LampFooter = () => {
 
 	return (
 		<LampContainer>
-      <div className="h-5"></div>
+			<div className="h-5"></div>
 			<motion.div
 				initial={{ opacity: 0.5, y: 100 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export const LampFooter = () => {
 										href={link.href}
 										whileHover={{ scale: 1.1, y: -2 }}
 										whileTap={{ scale: 0.95 }}
-                    target="_blank"
+										target="_blank"
 										className="p-3 bg-slate-800/50 hover:bg-primary-600/20 border border-slate-700 hover:border-primary-500 rounded-lg transition-all duration-300 backdrop-blur-sm"
 										aria-label={link.label}>
 										<IconComponent className="w-5 h-5 text-slate-400 hover:text-primary-400 transition-colors duration-300" />
